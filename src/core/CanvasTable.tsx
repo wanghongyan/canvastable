@@ -92,6 +92,14 @@ class CanvasTable {
       table: this
     });
   }
+  
+  setHeader(columns: ICanvasTable.IColumn[]) {
+    this.header = new HeaderTree({
+      colProps: columns,
+      table: this
+    });
+    this.props.columns = columns;
+  }
 
   private _source: obj[] = [];
   set source(data: obj[]) {
